@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo-project';
+
+
+
+  onShow(){
+    alert('H')
+    console.log('Show');
+    
+  }
+
+
 }
