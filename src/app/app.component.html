@@ -1,6 +1,31 @@
 <div class="mainContainer">
   <h1>Demo Angular</h1>
   <p>Branch develop</p>
-  
-  <app-button [text]="'Done'" [onClickFunction]="onShow"></app-button>
+
+  <app-button 
+    [text]="'Done'" 
+    [isColor]="'accent'" 
+    [onClickFunction]="onShow"
+    [isStyle]="'background-color: #775FEC;'"
+    >
+  </app-button>
+  <br>
+  <form  [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+    <input type="text" placeholder="InputA" name="InputA" formControlName="InputA">
+    <br>
+    <input type="text" placeholder="InputB" name="InputB" formControlName="InputB">
+    <br>
+    <input type="email" placeholder="InputC" name="InputC" formControlName="InputC">
+    <div *ngIf="!email.valid && (email.dirty ||email.touched)">
+      <div [hidden]="!email.errors.required">
+        email is required
+      </div>
+      <div [hidden]="!email.errors.email">
+        invalid email id
+      </div>
+    </div>
+    <br>
+    <button type="submit">SAVE</button>
+  </form>
+
 </div>

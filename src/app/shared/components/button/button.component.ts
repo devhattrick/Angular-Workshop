@@ -5,13 +5,22 @@ import { Component, OnInit, Input, Output, EventEmitter,OnChanges } from '@angul
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
+
+// export interface Props{
+//   text:string,
+//   color:string
+// }
 export class ButtonComponent implements OnInit {
 
   @Input() text:any;
-  @Input() color:any;
+  @Input() isColor:any;
+  @Input() isStyle:any;
+
   @Input() onClickFunction:any;
 
   @Output() isClick = new EventEmitter<any>();
+
+  sss= '';
 
   constructor() { }
 
